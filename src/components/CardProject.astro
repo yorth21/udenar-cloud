@@ -1,0 +1,73 @@
+---
+// Props para la card de proyecto
+const { image, title, description, date, author, link } = Astro.props;
+---
+
+<article
+  class="group relative mx-auto flex max-w-sm flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
+>
+  <a
+    href={link}
+    aria-label={`Ver detalles de ${title}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="focus:ring-secondary block focus:ring-2 focus:outline-none"
+  >
+    <img
+      src={image}
+      alt={`Imagen de ${title}`}
+      class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+      loading="lazy"
+    />
+  </a>
+  <div class="flex flex-1 flex-col p-5">
+    <h2
+      class="group-hover:text-secondary mb-2 text-xl font-bold text-gray-800 transition-colors"
+    >
+      {title}
+    </h2>
+    <p class="mb-4 line-clamp-3 text-sm text-gray-600">{description}</p>
+    <div
+      class="mt-auto flex items-center justify-between text-xs text-gray-400"
+    >
+      <span class="flex items-center gap-1">
+        <svg
+          class="text-secondary h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+          ></path></svg
+        >
+        {date}
+      </span>
+      <span class="flex items-center gap-1">
+        <svg
+          class="text-primary h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+          ></path></svg
+        >
+        {author}
+      </span>
+    </div>
+    <a
+      href={link}
+      aria-label={`Ver proyecto ${title}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bg-primary hover:bg-primary/90 mt-5 inline-block rounded-lg px-4 py-2 text-center text-sm font-semibold text-white shadow transition-colors"
+      >Ver proyecto</a
+    >
+  </div>
+</article>
