@@ -1,3 +1,26 @@
-<section id="projects" class="relative -mt-24 min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background/95 to-background/90">
-  <h1 class="text-5xl font-bold">Projects</h1>
+---
+import materiapp from "../assets/materiapp-screenshot.jpg";
+
+import CardProject from "../components/CardProject.astro";
+---
+
+<section id="projects" class="flex w-full flex-col py-24">
+  <h1
+    class="text-primary text-center text-4xl font-bold sm:text-5xl md:text-6xl"
+  >
+    Proyectos
+  </h1>
+
+  <div
+    class="mx-auto mt-10 grid w-full max-w-6xl grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3"
+  >
+    <CardProject
+      image={materiapp.src}
+      title="MateriApp"
+      description="Aplicación web para llevar un registro de tus materias aprobadas y pendientes."
+      date="2025-05-20"
+      author="Yorth21"
+      link="https://materiapp.udenar.cloud/"
+    />
+  </div>
 </section>
